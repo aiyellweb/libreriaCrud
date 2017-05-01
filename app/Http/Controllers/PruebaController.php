@@ -4,13 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Categoria;
-use App\Autore;
-use DB;
+use App\Prueba;
 
-
-
-class LibroController extends Controller
+class PruebaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +15,8 @@ class LibroController extends Controller
      */
     public function index()
     {
-        return view('libros.index');
+        return view('prueba.index');
+
     }
 
     /**
@@ -29,18 +26,7 @@ class LibroController extends Controller
      */
     public function create()
     {
-        $estado="A";    
-
-        // eloquent de laravel 
-        $categoria= Categoria::select('id','name_categoria')
-                    ->where('estado',$estado)
-                    ->get(); 
-
-         $autor = Autore::select('id','name_autor')
-                          ->where('estado',$estado)->get();
-
-                             
-        return view('libros.create',compact('categoria','autor'));
+        //
     }
 
     /**
@@ -51,7 +37,7 @@ class LibroController extends Controller
      */
     public function store(Request $request)
     {
-            dd($request->all());            
+        //
     }
 
     /**

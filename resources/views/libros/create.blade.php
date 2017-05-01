@@ -38,6 +38,7 @@
              </div>
              <div class="form-group">
                  <select name="categoria">
+                 <label>Categoria</label>
                  @foreach($categoria as $cate)
                    <option value="{{$cate->id}}">{{$cate->name_categoria}}</option>
 
@@ -45,6 +46,19 @@
 
                  </select> 
              </div>
+
+                <div class="form-group">
+                <label>Autores</label>
+                 <select name="categoria">
+                 @foreach($autor as $aut)
+                   <option value="{{$aut->id}}">{{$aut->name_autor}}</option>
+
+                  @endforeach 
+
+                 </select> 
+             </div>
+
+
                  {!!form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10'])!!}
 
               <button type="button" id='cancelar'  name='cancelar' class="btn btn-info btn-sm m-t-10" >Cancelar</button>             

@@ -11,6 +11,8 @@
 |
 */
 
+use App\Prueba;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,3 +20,17 @@ Route::get('/', function () {
 
 Route::resource('libro','LibroController');
 
+Route::resource('prueba','PruebaController');
+
+
+Route::get('test',function(){
+
+	$prueba = new Prueba();
+	$prueba->nombre="prueba 1";
+	$prueba->texto="valor";
+	$prueba->estado="A";
+	$prueba->save();
+	return "perfecto";
+
+
+});
